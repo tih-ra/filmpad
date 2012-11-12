@@ -1,0 +1,14 @@
+%tr
+  %td= video.title
+  %td= video.created_at.to_s(:short)
+  %td
+    = video_status(video)
+  %td
+    %a.to_right.default_margin.btn.btn-danger{:href => "#"}
+      %i.icon-trash.icon-white
+      %span
+        %strong Delete
+    %a.to_right.btn.btn-primary{:href => "#"}
+      %i.icon-play.icon-white
+      %span
+        %strong Play

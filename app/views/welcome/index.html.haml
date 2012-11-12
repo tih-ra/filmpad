@@ -1,0 +1,21 @@
+= @link
+.row
+  .span12
+    .row-fluid
+      .span12.well
+        %legend Add Movie Link
+        = form_for @video, :remote => true do |f|
+          = f.select :video_source, Video::SOURCES, :class => 'span5'
+          = f.text_field :video_link, :class => 'span7', :placeholder => 'Movie URL'
+          = f.submit "Add Video", :class => 'btn btn-warning'
+
+.row
+  .span12
+    %table.table.table-striped.table-condensed
+      %thead
+        %tr
+          %th Title
+          %th Date
+          %th Status
+          %th.to_right Actions
+      %tbody#videos= render @videos
