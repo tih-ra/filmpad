@@ -1,0 +1,5 @@
+#!/bin/sh
+kill -s QUIT `cat /home/ec2-user/apps/f/tmp/pids/unicorn.pid`
+bundle exec unicorn_rails -c /home/ec2-user/apps/f/config/unicorn.rb -D -E production
+echo "restarting Unicorn app"
+
