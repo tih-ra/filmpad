@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.2'
 gem 'haml'
 gem 'carrierwave'
+gem 'fog', '~> 1.5.0'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
