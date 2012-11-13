@@ -19,8 +19,8 @@ class Importer
       script = s if s.content.include?('player.addVariable')
     end
     sub_url = script.content[/player\.addVariable\(\'file\'\, \'(.*?)\'\)\;/]
-    #url = sub_url.gsub(/(.*?)\(\'file\'\, \'(.*?)\'\)\;(.*?)/, "\\2")
-    url = "http://peach.blender.org/wp-content/uploads/big_big_buck_bunny.jpg"
+    url = sub_url.gsub(/(.*?)\(\'file\'\, \'(.*?)\'\)\;(.*?)/, "\\2")
+    #url = "http://peach.blender.org/wp-content/uploads/big_big_buck_bunny.jpg"
     title = agent.page.search("h1").first
     return { :url => url, :title => title.text }
   end
