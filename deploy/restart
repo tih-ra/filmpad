@@ -4,6 +4,6 @@ kill -s QUIT `cat /home/ec2-user/apps/f/tmp/pids/unicorn.pid`
 bundle exec unicorn_rails -c /home/ec2-user/apps/f/config/unicorn.rb -D -E production
 echo "Unicorn app started successfully"
 echo "restarting Sidekiq app"
-kill -s QUIT `cat /home/ec2-user/apps/f/tmp/pids/sidekiq.pid`
+kill `cat /home/ec2-user/apps/f/tmp/pids/sidekiq.pid`
 bundle exec sidekiq -C /home/ec2-user/apps/f/config/sidekiq.yml -e production -P /home/ec2-user/apps/f/tmp/pids/sidekiq.pid >> /home/ec2-user/apps/f/log/sidekiq.log 2>&1 &
 echo "Sidekiq app started successfully"
